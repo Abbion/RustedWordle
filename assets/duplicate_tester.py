@@ -1,15 +1,17 @@
-file = open("words.txt", "r")
-lines = file.read().splitlines()
-file.close()
+fileName = "words.txt"
 
-amountOfLines = len(lines)
-noDuplicates = True
+with open(fileName, "r") as file:
+    lines = file.read().splitlines()
 
-for i in range(amountOfLines):
-    for j in range(i + 1, amountOfLines):
-        if lines[i] == lines[j]:
-            print(i, " - ", j, " => ", lines[i], " - ", lines[j])
-            noDuplicates = False            
+print("processing...");
 
-if noDuplicates == True:
-    print("There are no dupicates")
+wordsSet = set(lines)
+
+duplicatesDeleted = len(lines) - len(wordsSet)
+print(duplicatesDeleted, "duplicates deleted")
+
+if duplicatesDeleted > 0:
+    with open(fileName, "w") as file:
+            file.write('\n'.join(wordsSet))
+
+print("duplicates deleted")
