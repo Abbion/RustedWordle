@@ -19,12 +19,12 @@ pub fn check_user_input(user_guess : &String, user_guesses: &Vec<String>) -> boo
     }
 
     if user_guess.len() > 5 {
-        println!("{}", "Word is to long! It should have 5 letters.".yellow());
+        println!("{}", "Word is too long! It should have 5 letters.".yellow());
         return false;
     }
 
     if user_guess.len() < 5 {
-        println!("{}", "Word is to short! It should have 5 letters.".yellow());
+        println!("{}", "Word is too short! It should have 5 letters.".yellow());
         return false;
     }
 
