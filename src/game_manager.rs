@@ -58,6 +58,3 @@ pub fn new_round_loop(random_word : &String) {
         }
     }
 }
-
-
-
